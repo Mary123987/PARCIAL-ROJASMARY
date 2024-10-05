@@ -2,7 +2,46 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-image: url('https://example.com/path-to-your-pet-themed-background.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Arial', sans-serif;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+    .display-4 {
+        font-weight: bold;
+        color: #61e7ff;
+    }
+    .btn-primary {
+        background-color: #679dc2;
+        border-color: #1d5786;
+    }
+    .btn-primary:hover {
+        background-color: #2ff1ff;
+        border-color: #1f6180;
+    }
+    footer {
+        background-color: #ffffff; /* Verde */
+        color: white;
+        text-align: center;
+        padding: 0px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<div class="container text-center">
+    <h1 class="display-4">Bienvenido a la Aplicación de Remesas!!  </h1>
+    <p>Optimiza el proceso de envíos y recepciones de dinero entre EE.UU. y países latinoamericanos..</p>
+    <a asp-controller="Home" asp-action="Registrar" class="btn btn-primary">Agregar Remesa</a>
+    <a asp-controller="Home" asp-action="Listado" class="btn btn-secondary">Ver Lista</a>
 </div>
