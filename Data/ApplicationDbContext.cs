@@ -9,4 +9,9 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<PARCIAL_ROJASMARY.Models.Remesa> DataRemesa { get; set; }
+
+
+
 }
