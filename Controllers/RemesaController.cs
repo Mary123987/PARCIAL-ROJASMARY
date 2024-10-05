@@ -46,12 +46,13 @@ namespace PARCIAL_ROJASMARY.Controllers
             return View("Registrar");
         }
 
+
         [HttpGet]
         public IActionResult Listado()
         {
-            var remesas = _context.DataRemesa.ToList();
-            return View("Listado");
-        }
+            var remesas = _context.DataRemesa.ToList(); // Fetch the list of Remesa
+            return View(remesas); // Pass the list to the view
+}
 
 
 
