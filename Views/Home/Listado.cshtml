@@ -1,33 +1,93 @@
-@model IEnumerable<Remesa>
+@model IEnumerable<PARCIAL_ROJASMARY.Models.Remesa>
 
-<table>
-    <thead>
-        <tr>
-            <th>Remitente</th>
-            <th>Destinatario</th>
-            <th>País de Origen</th>
-            <th>País de Destino</th>
-            <th>Monto Enviado</th>
-            <th>Moneda</th>
-            <th>Tasa de Cambio</th>
-            <th>Monto Final</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var remesa in Model)
-    {
-        <tr>
-            <td>@remesa.Remitente</td>
-            <td>@remesa.Destinatario</td>
-            <td>@remesa.PaisOrigen</td>
-            <td>@remesa.PaisDestino</td>
-            <td>@remesa.MontoEnviado</td>
-            <td>@remesa.Moneda</td>
-            <td>@remesa.TasaCambio</td>
-            <td>@remesa.MontoFinal</td>
-            <td>@remesa.Estado</td>
-        </tr>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
     }
-    </tbody>
-</table>
+    main {
+        flex: 1;
+    }
+    footer {
+        background-color: #3dd1d1; /* Verde */
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #3dc5ba; /* Verde */
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    .empty-message {
+        text-align: center;
+        font-style: italic;
+        color: #888;
+    }
+</style>
+
+<main>
+    <table>
+        <thead>
+            <tr>
+                <th>Remitente</th>
+                <th>Destinatario</th>
+                <th>País de Origen</th>
+                <th>País de Destino</th>
+                <th>Monto Enviado</th>
+                <th>Moneda</th>
+                <th>Tasa de Cambio</th>
+                <th>Monto Final</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var remesa in Model)
+            {
+                <tr>
+                    <td>@remesa.Remitente</td>
+                    <td>@remesa.Destinatario</td>
+                    <td>@remesa.PaisOrigen</td>
+                    <td>@remesa.PaisDestino</td>
+                    <td>@remesa.MontoEnviado</td>
+                    <td>@remesa.Moneda</td>
+                    <td>@remesa.TasaCambio</td>
+                    <td>@remesa.MontoFinal</td>
+                    <td>@remesa.Estado</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="9" class="empty-message">No hay remesas disponibles.</td></tr>
+        }
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    © 2024 Tu Empresa. Todos los derechos reservados.
+</footer>
