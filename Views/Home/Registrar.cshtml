@@ -1,0 +1,115 @@
+@model PARCIAL_ROJASMARY.Models.Remesa
+
+@{
+    ViewData["Title"] = "Agregar Remesa";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #333;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Agregar Remesa</h1>
+            <form asp-action="Registrar" method="post">
+                <div>
+                    <label>Remitente</label>
+                    <input asp-for="Remitente" type="text" />
+                </div>
+                <div>
+                    <label>Destinatario</label>
+                    <input asp-for="Destinatario" type="text" />
+                </div>
+                <div>
+                    <label>País de Origen</label>
+                    <input asp-for="PaisOrigen" type="text" />
+                </div>
+                <div>
+                    <label>País de Destino</label>
+                    <input asp-for="PaisDestino" type="text" />
+                </div>
+                <div>
+                    <label>Monto Enviado</label>
+                    <input asp-for="MontoEnviado" type="number" />
+                </div>
+                <div>
+                    <label>Moneda (USD/BTC)</label>
+                    <input asp-for="Moneda" type="text" />
+                </div>
+                <div>
+                    <label>Tasa de Cambio</label>
+                    <input asp-for="TasaCambio" type="number" />
+                </div>
+                <div>
+                    <label>Monto Final</label>
+                    <input asp-for="MontoFinal" type="number" />
+                </div>
+                <div>
+                    <label>Estado</label>
+                    <input asp-for="Estado" type="text" />
+                </div>
+                <button type="submit">Registrar Remesa</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
